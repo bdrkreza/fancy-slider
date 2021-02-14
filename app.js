@@ -46,15 +46,19 @@ const selectItem = (event, img) => {
         sliders.push(img);
     } else {
         sliders = sliders.filter(selectImg => selectImg !== img)
+            // issueCount();
     }
 }
 var timer;
 const createSlider = () => {
     // check slider image length
+    const totalSlider = document.getElementById('count-slider');
+    totalSlider.innerText = sliders.length;
     if (sliders.length < 2) {
         alert('Select at least 2 image.');
         return;
     }
+
     // crate slider previous next area
     const duration = document.getElementById('duration');
     let durationNumber = duration.value || 1000;
