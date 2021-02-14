@@ -39,13 +39,13 @@ const getImages = (query) => {
 let slideIndex = 0;
 const selectItem = (event, img) => {
     let element = event.target;
+
     let item = sliders.indexOf(img);
     element.classList.toggle('added');
     if (item === -1) {
         sliders.push(img);
     } else {
         sliders = sliders.filter(selectImg => selectImg !== img)
-        console.log(sliders);
     }
 }
 var timer;
